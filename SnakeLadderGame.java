@@ -1,10 +1,11 @@
 public class  SnakeLadderGame {
 	public static void main(String[] args) {
-	int posA = 0; // player A pos zero
-
+	int posA = 0;
+		// flag 0 : not play , flag 1: play enable
+		int dieRolls = 0;
 		System.out.println("Snake and Laddar Simulation Game");
 		while (true) {
-			
+			dieRolls++;
 //			logic for player 1
 //			roll the die
 			int dieA = (int) Math.floor(Math.random() * 10) % 6 + 1;
@@ -14,6 +15,7 @@ public class  SnakeLadderGame {
 			switch (UpOrDownA) {
 			case 1:
 				posA += dieA; // ladder block
+				System.out.println("Ladder " + dieRolls + " getValue " + dieA + " Die Rolls " + posA + " final pos");
 
 				break;
 
@@ -21,20 +23,19 @@ public class  SnakeLadderGame {
 				if (posA <= 0) {
 					posA -= 0; // restart from zero
 
-					System.out.println("Player A is Knocked Out . Need inside Game");
-
 				} else if (posA > 0) {
 
 					posA -= dieA; // snake block
-					if (posA < 0)
-						posA = 0;
+					System.out.println("snake " + dieRolls + " getValue " + dieA + " Die Rolls " + posA + " final pos");
+
 					break;
 				}
 			default:
+
 			}
 
 			if (posA == 100) {
-				System.out.println("Game Over! Player A wins ");
+				System.out.println("Game Over! Player A wins with " + dieRolls + " Die Rolls");
 				return;
 			}
 		}
