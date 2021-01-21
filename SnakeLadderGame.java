@@ -57,10 +57,6 @@ public class  SnakeLadderGame {
 				
 			}
 
-		//}
-		
-		//while (true) {
-
 //			logic for player 2
 //			roll the die
 			if (posB == 100) {
