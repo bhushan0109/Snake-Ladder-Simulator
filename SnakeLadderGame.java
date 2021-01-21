@@ -3,8 +3,8 @@ public class  SnakeLadderGame {
 	int posA = 0; // player A pos zero
 
 		System.out.println("Snake and Laddar Simulation Game");
-		while (posA == 100) {
-
+		while (true) {
+			
 //			logic for player 1
 //			roll the die
 			int dieA = (int) Math.floor(Math.random() * 10) % 6 + 1;
@@ -33,7 +33,12 @@ public class  SnakeLadderGame {
 			default:
 			}
 
+			if (posA == 100) {
+				System.out.println("Game Over! Player A wins ");
+				return;
+			}
 		}
+
 	}
 
 }
